@@ -1,26 +1,23 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/id/1051/900/900);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/1.jpg);">
   <div class="container">
     <h1>Cocktails!</h1>
     <p>Change your life and learn how to make cocktails</p>
-    <%= link_to 'Create cocktail', new_cocktail_path, class: "btn btn-success" %>
+
   </div>
 </div>
 <div class="over">
-<h1 class="text-center m-2">List of cocktails</h1>
-<div class="d-flex flex-wrap justify-content-center">
-<% @cocktails.each do |cocktail| %>
+  <h1 class="text-center m-2 white-bold">List of cocktails</h1>
+  <div class="d-flex flex-wrap justify-content-center">
+    <% @cocktails.each do |cocktail| %>
 
-<div class="card m-2" style="width: 30%;">
-  <img src="https://picsum.photos/800" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= cocktail.name %></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <%= link_to 'Learn more', cocktail, class: "btn btn-primary" %>
+    <div class="card m-2">
+      <h5 class="title-card"><%= cocktail.name.capitalize %></h5>
+      <%= link_to 'Learn more', cocktail, class: "btn btn-dark" %>
+    </div>
+    <% end %>
   </div>
 </div>
-<% end %>
-</div>
-</div>
+
 
 
 

@@ -11,7 +11,31 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body style="background-image: url(/assets/background.jpg);">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Carousel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', cocktails_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Link', cocktails_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-1" type="submit">Search</button>
+        <%= link_to 'Add Own Cocktail', new_cocktail_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+      </form>
+    </div>
+  </nav>
   <div class='container'>
     <%= yield %>
   </div>

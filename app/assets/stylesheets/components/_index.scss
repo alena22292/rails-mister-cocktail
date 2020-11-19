@@ -3,13 +3,24 @@
 @import "avatar";
 @import "navbar";
 @import "banner";
+@import "card";
 
 .background-image-change {
-  background: #515070;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/3.jpg);
   color: #f6f6f6;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 .over {
-  background: #515070;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/4.jpg);
   margin-top: 10px;
   border-radius: 10px;
 }
+.white-bold {
+  color: #f6f6f6;
+  font-weight: 900;
+  padding-top: 20px;
+
+}
+
+

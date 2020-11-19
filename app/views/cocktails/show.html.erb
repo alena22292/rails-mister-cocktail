@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/id/1022/900/900);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/6.jpg);">
   <div class="container">
     <h1 class='text-center'><%= @cocktail.name %></h1>
   </div>
@@ -7,7 +7,7 @@
   <div class="col-8">
     <h3>Description</h3>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio dolores totam iure tempora eligendi cum consequatur repellat modi placeat doloribus iusto excepturi eius perspiciatis, ab debitis saepe nostrum voluptate ut.</p>
-    <%= link_to 'Back to list', cocktails_path, class: "btn btn-danger" %>
+
   </div>
 
   <div class="col-4">
@@ -27,4 +27,5 @@
     <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
   </div>
 </div>
+
 

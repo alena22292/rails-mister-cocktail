@@ -1,0 +1,12 @@
+.card {
+  width: 30%;
+  height: 150px;
+  background-image: url(/assets/5.jpg);
+  position: relative;
+}
+.title-card {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  color: #f6f6f6;
+}
