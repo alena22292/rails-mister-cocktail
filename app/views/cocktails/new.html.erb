@@ -1,0 +1,12 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/id/1022/900/900);">
+  <div class="container">
+    <h1 class='text-center'><%= @cocktail.name %></h1>
+  </div>
+</div>
+<div class="background-image-change p-5">
+<h1 class="text-center">New Cocktail</h1>
+
+<%= render 'form', cocktail: @cocktail %>
+
+<%= link_to 'Home', cocktails_path, class: "btn btn-danger" %>
+</div>
