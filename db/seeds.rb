@@ -16,3 +16,6 @@ repos = JSON.parse(str)
 repos['drinks'].each do |ingr|
    Ingredient.create(name: ingr["strIngredient1"])
 end
+
+
+
