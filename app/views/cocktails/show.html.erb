@@ -1,13 +1,20 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/6.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.photo.attached? ? cl_image_path(@cocktail.photo.key) : image_path('2.jpg') %>);">
   <div class="container">
     <h1 class='text-center'><%= @cocktail.name %></h1>
   </div>
 </div>
 <div class="row d-flex justify-content-around mt-3">
-  <div class="col-8">
+  <div class="col-8 description">
     <h3>Description</h3>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio dolores totam iure tempora eligendi cum consequatur repellat modi placeat doloribus iusto excepturi eius perspiciatis, ab debitis saepe nostrum voluptate ut.</p>
-
+    <%= link_to cocktail_path(@cocktail.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } do%>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <%= link_to  edit_cocktail_path do %>
+        <i class="fas fa-edit"></i>
+        <% end %>
   </div>
 
   <div class="col-4">

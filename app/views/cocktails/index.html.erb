@@ -10,7 +10,7 @@
   <div class="d-flex flex-wrap justify-content-center">
     <% @cocktails.each do |cocktail| %>
 
-    <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dreamslewagon/image/upload/v1605870333/sylxthoa7mt9n23gf6a8.jpg)">
+    <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo.attached? ? cl_image_path(cocktail.photo.key) : image_path('1.jpg') %>)">
       <%= cocktail.name.capitalize %>
       <%= link_to cocktail do %>
      <i class="far fa-eye"></i>

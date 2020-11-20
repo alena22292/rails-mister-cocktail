@@ -1,13 +1,32 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :delete, :edit, :update, :destroy]
   def index
     @cocktails = Cocktail.all
   end
+
   def show
   end
+
   def new
     @cocktail = Cocktail.new
   end
+
+  def edit
+  end
+
+  def update
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to root_path, notice: 'Cocktail was successfully destroyed.'
+  end
+
   def create
      @cocktail = Cocktail.new(cocktail_params)
      if @cocktail.save
@@ -16,6 +35,13 @@ class CocktailsController < ApplicationController
       render :new
     end
   end
+
+  def search
+    word = params["search"]
+    @cocktails = Cocktail.where("name ILIKE ?", "%#{word}%")
+    render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cocktail
@@ -23,6 +49,6 @@ class CocktailsController < ApplicationController
     end
 
     def cocktail_params
-      params.require(:cocktail).permit(:name)
+      params.require(:cocktail).permit(:name, :photo)
     end
 end
