@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.photo.attached? ? cl_image_path(@cocktail.photo.key) : image_path('2.jpg') %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.photo.attached? ? cl_image_path(@cocktail.photo.key) : cl_image_path('eb6zbtrsmr81wmnqcevs') %>);">
   <div class="container">
     <h1 class='text-center'><%= @cocktail.name %></h1>
   </div>
