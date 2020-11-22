@@ -8,31 +8,66 @@
     <h3>Description</h3>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio dolores totam iure tempora eligendi cum consequatur repellat modi placeat doloribus iusto excepturi eius perspiciatis, ab debitis saepe nostrum voluptate ut.</p>
     <%= link_to cocktail_path(@cocktail.id),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } do%>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-        <%= link_to  edit_cocktail_path do %>
-        <i class="fas fa-edit"></i>
-        <% end %>
+    method: :delete,
+    data: { confirm: 'Are you sure?' } do%>
+    <i class="fas fa-trash-alt"></i>
+    <% end %>
+    <%= link_to  edit_cocktail_path do %>
+    <i class="fas fa-edit"></i>
+    <% end %>
+
+    <%#= link_to 'Leave review', new_cocktail_review_path(@cocktail) %>
+
   </div>
 
   <div class="col-4">
     <h4>Ingredients</h4>
-    <ul >
+    <ul>
       <% @cocktail.doses.each do |dose| %>
       <li style="list-style: none;">
         <span><strong><%= dose.ingredient.name %></strong> - <%= dose.description %></span>
-        <%= link_to '(delete)',
-        dose_path(dose),
+        <span class='grey'>
+        <%= link_to dose_path(dose),
         method: :delete,
-        data: { confirm: 'Are you sure?' }
-        %>
+        data: { confirm: 'Are you sure?' } do%>
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+        </span>
       </li>
       <% end %>
     </ul>
     <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
   </div>
+</div>
+<div class="review">
+  <h4>Reviews</h4>
+  <ul class="list-group">
+    <% @cocktail.reviews.each do |review| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <span><%= review.content %></span> <br>
+
+        <span><strong>Rating</strong>: <% review.rating.times do %>
+              <i class="fas fa-star gold"></i>
+              <% end %>
+        </span>
+
+      </div>
+      <div class="grey">
+        <%= link_to review_path(review),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } do%>
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="center">
+  <h4><i class="fas fa-plus"></i> <strong>Add review for <%= @cocktail.name %> </strong></h4>
+
+  <%= render 'reviews/form' %>
 </div>
 
 

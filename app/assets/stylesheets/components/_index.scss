@@ -4,6 +4,8 @@
 @import "navbar";
 @import "banner";
 @import "card";
+@import "form";
+@import "footer";
 
 .background-image-change {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dreamslewagon/image/upload/v1605886413/uepc0gxi8yv928bul07grzf3htwi.jpg);
@@ -30,7 +32,33 @@
     color: #E50107;
     font-size: 30px;
     margin-right: 10px;
+    opacity: 0.8;
+    &:hover {
+     opacity: 0.9;
+    }
   }
 }
+
+.review {
+  margin-top: 40px;
+  padding: 10px;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  border-radius: 5px;
+  h4 {
+    font-weight: 900;
+    margin: 20px 20px;
+  }
+}
+
+.center {
+  margin: 20px auto;
+  width: 600px;
+  i {
+    color: #E50107;
+    font-size: 25px;
+  }
+}
+
+
 
 
